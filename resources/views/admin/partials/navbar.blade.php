@@ -184,7 +184,7 @@
                     </a>
                   </li>
                   <li class="dropdown-item py-2">
-                    <a href="javascript:;" class="text-body ms-0">
+                    <a href="{{ route('admin.logout') }}" class="text-body ms-0">
                       <i class="me-2 icon-md" data-feather="log-out"></i>
                       <span>خروج</span>
                     </a>
