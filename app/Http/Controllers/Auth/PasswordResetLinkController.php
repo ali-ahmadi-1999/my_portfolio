@@ -37,8 +37,8 @@ class PasswordResetLinkController extends Controller
         );
 
         return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
+                    ? back()->with('status', __('لینک بازنشانی رمز عبور به ایمیل شما ارسال شد!'))
                     : back()->withInput($request->only('email'))
-                        ->withErrors(['email' => __($status)]);
+                        ->withErrors(['email' => __('ایمیل وارد شده پیدا نشد. لطفاً دوباره تلاش کنید.')]);
     }
 }

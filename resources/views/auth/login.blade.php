@@ -101,7 +101,7 @@
                            وارد شدن 
                         </button>
                       </div>
-                     <a href="register.html" class="d-block mt-3 text-muted" style="text-decoration: underline;">فراموشی رمز عبور</a>
+                     <a href="{{ route('password.request') }}" class="d-block mt-3 text-muted" style="text-decoration: underline;">فراموشی رمز عبور</a>
 
                     </form>
 
