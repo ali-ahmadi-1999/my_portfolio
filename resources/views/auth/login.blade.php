@@ -61,15 +61,37 @@
                     <a href="#" class="noble-ui-logo logo-light d-block mb-2">ام‌جی-<span>نمادی</span></a>
                    <h5 class="text-muted fw-normal mb-4">خوش آمدید! وارد حساب کاربری خود شوید.</h5>
 
+
+
+
+                   @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                         </div>
+
+                    @endif
+
                     <form method="POST" action="{{ route('login') }}" class="forms-sample">
                          @csrf
                       <div class="mb-3">
                         <label for="userEmail" class="form-label">نام کاربری </label>
-                        <input type="uesername" class="form-control" name="username" placeholder="نام کاربری ">
+                        <input type="uesername" class="form-control" name="username" value="{{ old('username') }}" placeholder="نام کاربری ">
+                   
+
+                            @error('username')
+                                    <span class="text-danger ">  {{ $message }}  </span>
+                            @enderror
+                        
                       </div>
                       <div class="mb-3">
                         <label for="userPassword" class="form-label">رمز عبور </label>
-                        <input type="text" class="form-control"  name="password" autocomplete="current-password" placeholder="رمز عبور">
+                        <input type="text" class="form-control"  name="password" value="{{ old('password') }}"  autocomplete="current-password" placeholder="رمز عبور">
+                      
+
+                            @error('password')
+                             <span class="text-danger ">  {{ $message }}  </span>
+                            @enderror
+                      
                       </div>
           
                       <div>
