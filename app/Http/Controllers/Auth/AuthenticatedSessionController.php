@@ -28,7 +28,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        $notification = [
+           
+            'message' => 'خوش امدید به  پنل مدیریت ',
+            'alert-type'=>'success'
+
+        ];
+
+        return redirect()->intended(route('dashboard', absolute: false))->with($notification);
     }
 
     /**
