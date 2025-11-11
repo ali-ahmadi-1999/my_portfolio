@@ -9,7 +9,7 @@
 	<meta name="author" content="NobleUI">
 	<meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<title>NobleUI - HTML Bootstrap 5 Admin Dashboard Template</title>
+	{{-- <title>{{ confing('app.name') }}</title> --}}
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,7 @@
                       </div>
                       <div class="mb-3">
                         <label for="userPassword" class="form-label">رمز عبور </label>
-                        <input type="text" class="form-control"  name="password" value="{{ old('password') }}"  autocomplete="current-password" placeholder="رمز عبور">
+                        <input type="password" class="form-control"  name="password" value="{{ old('password') }}"  autocomplete="current-password" placeholder="رمز عبور">
                       
 
                             @error('password')
