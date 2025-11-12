@@ -38,6 +38,11 @@
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
   <!-- tooester link end   --> 
   <link rel="shortcut icon" href="{{ asset('../backend/assets/images/favicon.png') }}" />
+
+  <!-- jquery cdn  link start  --> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <!-- jquery cdn  link end   --> 
+   
 </head>
 <body>backend/
 	<div class="main-wrapper">

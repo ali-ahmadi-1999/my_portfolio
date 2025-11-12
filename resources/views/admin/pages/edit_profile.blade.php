@@ -25,14 +25,14 @@
           <div class="row mb-3">
           <label for="exampleInputEmail2" class="col-sm-3 col-form-label">عکس پروفایل </label>
           <div class="col-sm-9">
-            <input type="file" class="form-control text-end" id="exampleInputFile" name="profile_image" style="direction: rtl;">
+            <input type="file" class="form-control text-end" id="Image" name="profile_image" style="direction: rtl;">
           </div>
         </div>
 
           <div class="row mb-3">
           <label for="exampleInputEmail2" class="col-sm-3 col-form-label"></label>
           <div class="col-sm-9">
-           <img src="{{ asset('upload/my-profile-img.jpg') }}" alt="" style="width:90px; height:90px;">
+           <img id="ShowImage" src="{{ asset('upload/my-profile-img.jpg') }}" alt="" style="width:90px; height:90px;">
           </div>
         </div>
 
@@ -42,5 +42,20 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+  $(document).ready(function () {
+    $('#Image').on('change', function (e) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#ShowImage').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    });
+  });
+</script>
+
 
 @endsection
