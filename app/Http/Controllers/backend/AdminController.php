@@ -77,5 +77,13 @@ class AdminController extends Controller
 
     }//end method
 
+
+
+    public function AdminChangeProfile(){
+
+        return view('admin.pages.change_password');
+
+    }//end method
+
  
 }

@@ -9,14 +9,15 @@
       <h6 class="card-title">ویرایش پروفایل</h6>
 
       <form class="forms-sample" method="POST" action="{{ route('admin.update.profile') }}" enctype="multipart/form-data"> 
+         @csrf
+
         <div class="row mb-3">
-            @csrf
-            
           <label for="exampleInputUsername2" class="col-sm-3 col-form-label">نام کاربری</label>
           <div class="col-sm-9">
             <input type="text" name="username" class="form-control text-end" value="{{ $admin->username }}" placeholder="نام کاربری" style="direction: rtl;">
           </div>
         </div>
+        
         <div class="row mb-3">
           <label for="exampleInputEmail2" class="col-sm-3 col-form-label">ایمیل</label>
           <div class="col-sm-9">
