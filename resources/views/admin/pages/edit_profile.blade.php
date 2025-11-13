@@ -34,7 +34,7 @@
           <div class="row mb-3">
           <label for="exampleInputEmail2" class="col-sm-3 col-form-label"></label>
           <div class="col-sm-9">
-           <img id="ShowImage" src="{{$admin->photo}}" alt="" style="width:90px; height:90px;">
+           <img id="ShowImage" src="{{$admin->photo ? asset($admin->photo) : asset('uploads/admin/favicon.png')}}" alt="" style="width:90px; height:90px;">
           </div>
         </div>
 

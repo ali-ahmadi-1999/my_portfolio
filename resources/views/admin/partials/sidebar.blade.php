@@ -2,7 +2,7 @@
 
 <nav class="sidebar">
   <div class="sidebar-header">
-    <a href="#" class="sidebar-brand">
+    <a href="{{ route('dashboard') }}" class="sidebar-brand">
       ام‌جی-<span>نامادی</span>
     </a>
     <div class="sidebar-toggler not-active">
@@ -15,7 +15,7 @@
     <ul class="nav">
       <li class="nav-item nav-category">اصلی</li>
       <li class="nav-item">
-        <a href="dashboard.html" class="nav-link">
+        <a href="{{ route('dashboard') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">داشبورد</span>
         </a>
