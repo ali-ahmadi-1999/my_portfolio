@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('profession')->nullable();
             $table->string('description')->nullable();
             $table->string('photo')->nullable();
+            $table->string('resume')->nullable();
             $table->string('twitter_url')->nullable();
             $table->string('youtube_url')->nullable();
             $table->string('linkin_ur')->nullable();
