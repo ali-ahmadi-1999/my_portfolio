@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\frontend\Frontendcontroller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get('/' , [Frontendcontroller::class , 'homepage'])->name('home');
 
 
 Route::middleware('auth')->group(function () {
