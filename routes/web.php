@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin-edit-profile', [AdminController::class , 'AdminEditProfile'])->name('admin.edit.profile');
     Route::post('admin-update-profile', [AdminController::class , 'AdminUpdateProfile'])->name('admin.update.profile');
     Route::get('admin-change-profile', [AdminController::class , 'AdminChangeProfile'])->name('admin.change.password');
+    Route::post('admin-update-password', [AdminController::class , 'AdminUpdatePassword'])->name('admin.update.password');
 
 
 

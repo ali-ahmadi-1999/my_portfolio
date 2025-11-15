@@ -10,7 +10,7 @@
 
       <h6 class="card-title">ویرایش پروفایل</h6>
 
-      <form class="forms-sample" method="POST" action="{{ route('admin.update.profile') }}" enctype="multipart/form-data"> 
+      <form class="forms-sample" method="POST" action="{{ route('admin.update.password') }}"> 
              @csrf
             
         <div class="row mb-3">

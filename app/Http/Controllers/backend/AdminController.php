@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\backend;
 
+use Carbon\Carbon;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -86,4 +87,44 @@ class AdminController extends Controller
     }//end method
 
  
+
+
+    public function AdminUpdatePassword(Request $request){
+         
+     $request->validate([
+        'old_password' => 'required',
+        'new_password' => 'required',
+        'confirm_new_password' => ['required', 'same:new_password'],
+
+
+    ]);
+
+
+
+        // پیدا کردن کاربر فعلی
+    $admin = User::find(Auth::user()->id);
+
+    // بررسی درستی رمز قدیمی
+    if (!Hash::check($request->old_password, $admin->password)) {
+        $notification = [
+           'message' => 'رمز عبور فعلی مطابقت ندارد!',
+            'alert-type' => 'info'
+        ];
+
+        return redirect()->back()->with($notification);
+    }
+
+    // بروزرسانی رمز جدید
+    $admin->password = Hash::make($request->new_password);
+    $admin->save();
+
+    $notification = [
+            'message' => 'رمز عبور با موفقیت بروزرسانی شد!',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->back()->with($notification);
+
+
+    }//end method
 }
