@@ -22,6 +22,15 @@
       </li>
 
       <li class="nav-item nav-category"> کامپونت</li>
+
+
+         <li class="nav-item">
+        <a href="{{ route('hero.section') }}" class="nav-link">
+          <i class="link-icon" data-feather="box"></i>
+          <span class="link-title">صفحه اصلی </span>
+        </a>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
           <i class="link-icon" data-feather="feather"></i>

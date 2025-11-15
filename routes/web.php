@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\backend\Herocontroller;
 use App\Http\Controllers\frontend\Frontendcontroller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::get('admin-change-profile', [AdminController::class , 'AdminChangeProfile'])->name('admin.change.password');
     Route::post('admin-update-password', [AdminController::class , 'AdminUpdatePassword'])->name('admin.update.password');
 
+     
+
+    //Hero section routes 
+    Route::get('hero-section', [Herocontroller::class , 'HeroSection'])->name('hero.section');
 
 
 
